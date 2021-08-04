@@ -25,12 +25,10 @@ class Mitosisdetection(DetectionAlgorithm):
                     UniquePathIndicesValidator(),
                 )
             ),
-            output_file = Path("/output/mitotic-figures.json") # TODO: make command line parameter - for local execution: ./
-            # output_file = Path("./output/mitotic-figures.json")
+            output_file = Path("/output/mitotic-figures.json") 
         )
 
-        path_model = "/opt/algorithm/checkpoints/RetinaNetDA.pth" # TODO: make command line parameter - for local execution: ./
-        # path_model = "./model_weights/RetinaNet-TUPAC_AL-OrigSplit-512s_model.pth"
+        path_model = "/opt/algorithm/checkpoints/RetinaNetDA.pth" 
         self.size = 512
         self.batchsize = 10
         self.detect_thresh = 0.62
