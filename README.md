@@ -59,7 +59,17 @@ The output file is a list of dictionaries (one dictionary for each input file), 
 }]
 ```
 
+## 4. Building your container
 
+To test if all dependencies are met, you should run the file `build.bat` (Windows) / `build.sh` (Linux) to build the docker container. Please note that the next step (testing the container) also runs a build, so this step is not mandatory if you are certain that everything is set up correctly.
+
+## 5. Testing your container
+
+To test your container, you should run `test.bat` (on Windows) or `test.sh` (on Linux, might require sudo priviledges). This will run the test image(s) provided in the test folder through your model. It will check them against what you provide in `test/expected_output.json`. Be aware that this will, of course, initially not be equal to the demo detections we put there for testing our reference model.
+
+## 6. Generating the bundle for uploading your algorithm
+
+Finally, you need to run the `export.sh` (Linux) or `export.bat` script to package your docker image. This step creates a file with the extension "tar.gz", which you can then upload to grand-challenge to submit your algorithm.
 
 ## General remarks
 - The training is not done as part of the docker container, so please make sure that you only run inference within the container.
