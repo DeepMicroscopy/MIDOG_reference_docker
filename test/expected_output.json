@@ -1,0 +1,23 @@
+{
+    "type": "Multiple points",
+    "points": [
+        {
+            "point": [
+                644.0,
+                695.0,
+                0
+            ]
+        },
+        {
+            "point": [
+                484.0,
+                163.0,
+                0
+            ]
+        }
+    ],
+    "version": {
+        "major": 1,
+        "minor": 0
+    }
+}

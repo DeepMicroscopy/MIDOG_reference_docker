@@ -1,0 +1,14 @@
+# network parameters
+detect_thresh = 0.62
+nms_thresh = 0.4
+encoder = create_body(models.resnet18, False, -2)
+scales = [0.2, 0.4, 0.6, 0.8, 1.0]
+ratios = [1]
+sizes = [(64, 64), (32, 32), (16, 16)]
+self.model = RetinaNetDA.RetinaNetDA(encoder, n_classes=2, n_domains=4,  n_anchors=len(scales) * len(ratios),sizes=[size[0] for size in sizes], chs=128, final_bias=-4., n_conv=3)
+
+
+# normalization parameters
+self.model.load_state_dict(torch.load(self.path_model, map_location=self.device)['model'])
+self.mean = torch.FloatTensor([0.7481, 0.5692, 0.7225])  # state['data']['normalize']['mean']
+self.std = torch.FloatTensor([0.1759, 0.2284, 0.1792])  # state['data']['normalize']['std']
