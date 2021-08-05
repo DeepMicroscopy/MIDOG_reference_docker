@@ -44,7 +44,7 @@ class Mitosisdetection(DetectionAlgorithm):
         print(self._output_file, flush=True)
         print(self._case_results)
         with open(str(self._output_file), "w") as f:
-            json.dump(self._case_results[0], f)
+            json.dump(self._case_results, f)
 
     def process_case(self, *, idx, case):
         # Load and test the image for this case
