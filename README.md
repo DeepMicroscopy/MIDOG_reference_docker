@@ -115,7 +115,7 @@ After saving, you can add your docker container (you can also overwrite your con
 
 Finally, you can submit your docker container to MIDOG:
 
-![midog_submit](https://user-images.githubusercontent.com/10051592/128369144-97df48fd-06f4-4eba-9afc-52ed92721780.jpg)
+![submit_container](https://user-images.githubusercontent.com/10051592/128371715-d8385754-806e-4420-ac5e-4c25cc38112a.jpg)
 
 ## General remarks
 - The training is not done as part of the docker container, so please make sure that you only run inference within the container.
