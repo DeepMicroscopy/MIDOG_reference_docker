@@ -107,14 +107,15 @@ Please enter a name for the algorithm:
 
 And set the following properties
 
-![midog_submit](https://user-images.githubusercontent.com/10051592/128369144-97df48fd-06f4-4eba-9afc-52ed92721780.jpg)
-
 ![createalgo2](https://user-images.githubusercontent.com/10051592/128370393-3631bede-586e-4b4e-ad87-2500b11c152e.jpg)
 
 After saving, you can add your docker container (you can also overwrite your container here):
 
 ![uploadcontainer](https://user-images.githubusercontent.com/10051592/128370733-7445e252-a354-4c44-9155-9f232cd9f220.jpg)
 
+Finally, you can submit your docker container to MIDOG:
+
+![midog_submit](https://user-images.githubusercontent.com/10051592/128369144-97df48fd-06f4-4eba-9afc-52ed92721780.jpg)
 
 ## General remarks
 - The training is not done as part of the docker container, so please make sure that you only run inference within the container.
