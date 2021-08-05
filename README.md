@@ -96,7 +96,25 @@ To test your container, you should run `test.bat` (on Windows) or `test.sh` (on 
 Finally, you need to run the `export.sh` (Linux) or `export.bat` script to package your docker image. This step creates a file with the extension "tar.gz", which you can then upload to grand-challenge to submit your algorithm.
 
 ## 7. Creating an "Algorithm" on GrandChallenge and submitting your solution to the MIDOG Challenge
-TODO!
+
+** Note: Submission to grand-challenge.org will open on August 15th. **
+
+In order to submit your docker container, you first have to add an **Algorithm** entry for your docker container [here] https://grand-challenge.org/algorithms/create/.
+
+Please enter a name for the algorithm:
+
+![algo_title](https://user-images.githubusercontent.com/10051592/128369966-4fe08d95-e158-46c3-9f8e-3a7a320b0fdb.jpg)
+
+And set the following properties
+
+![midog_submit](https://user-images.githubusercontent.com/10051592/128369144-97df48fd-06f4-4eba-9afc-52ed92721780.jpg)
+
+![createalgo2](https://user-images.githubusercontent.com/10051592/128370393-3631bede-586e-4b4e-ad87-2500b11c152e.jpg)
+
+After saving, you can add your docker container (you can also overwrite your container here):
+
+![uploadcontainer](https://user-images.githubusercontent.com/10051592/128370733-7445e252-a354-4c44-9155-9f232cd9f220.jpg)
+
 
 ## General remarks
 - The training is not done as part of the docker container, so please make sure that you only run inference within the container.
