@@ -113,6 +113,14 @@ After saving, you can add your docker container (you can also overwrite your con
 
 ![uploadcontainer](https://user-images.githubusercontent.com/10051592/128370733-7445e252-a354-4c44-9155-9f232cd9f220.jpg)
 
+Please note that it can take a while (several minutes) until the container becomes active. You can determine which one is active in the same dialog:
+
+![containeractive](https://user-images.githubusercontent.com/10051592/128373241-83102a43-aad7-4457-b068-a6c7cc5a3b98.jpg)
+
+You can also try out your algorithm. Please note that you will require an image that has the DPI property set in order to use this function. You can use the image test/007.tiff provided as part of this container as test image (it contains mitotic figures).
+
+![tryout](https://user-images.githubusercontent.com/10051592/128373614-30b76cf6-2b2d-4d5d-87db-b8c67b47b64f.jpg)
+
 Finally, you can submit your docker container to MIDOG:
 
 ![submit_container](https://user-images.githubusercontent.com/10051592/128371715-d8385754-806e-4420-ac5e-4c25cc38112a.jpg)
