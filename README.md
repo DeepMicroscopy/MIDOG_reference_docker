@@ -43,10 +43,10 @@ This example is a RetinaNet implementation, extended by a domain-adversarial bra
 - The main processing (inference) is done in the file [detection.py](detection.py). It provides the class *MyMitosisDetection*, which loads the model and provides the method *process_image()* that takes an individual test image as numpy array as an input and returns the detections on said image.
 - The main file that is executed by the container is [process.py](process.py). It imports and instanciates the model (*MyMitosisDetection*). It then loads all images that are part of the test set and processes each of them (using the *process_image()* method). As post-processing, it will also perform a final non-maxima suppression on the image, before creating the return dictionary which contains all individual detected points, which are ultimately stored in the file `/output/mitotic-figures.json`. 
 
-The output file is a list of dictionaries (one dictionary for each input file), and has the following format:
+The output file is a dictionary (each input file is processed independently), and has the following format:
 
 ```
-[{
+{
     "type": "Multiple points",
     "points": [
         {
@@ -68,7 +68,7 @@ The output file is a list of dictionaries (one dictionary for each input file), 
         "major": 1,
         "minor": 0
     }
-}]
+}
 ```
 
 ## 3. Embedding your algorithm into an algorithm docker container <a name="todocker"></a>
