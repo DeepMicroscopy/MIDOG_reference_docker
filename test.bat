@@ -19,9 +19,7 @@ docker run --rm^
 
 if %ERRORLEVEL% == 0 (
 	echo "Tests successfully passed..."
-)
-else
-(
+) else (
 	echo "Expected output was not found..."
 )
 
