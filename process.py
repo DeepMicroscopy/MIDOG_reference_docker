@@ -40,7 +40,7 @@ class Mitosisdetection(DetectionAlgorithm):
 
         self.size = 512
         self.batchsize = 10
-        self.detect_thresh = 0.62
+        self.detect_thresh = 0.64
         self.nms_thresh = 0.4
         self.level = 0
         # TODO: You may adapt this to your model/algorithm here.
