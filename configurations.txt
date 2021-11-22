@@ -1,5 +1,5 @@
 # network parameters
-detect_thresh = 0.62
+detect_thresh = 0.64
 nms_thresh = 0.4
 encoder = create_body(models.resnet18, False, -2)
 scales = [0.2, 0.4, 0.6, 0.8, 1.0]
