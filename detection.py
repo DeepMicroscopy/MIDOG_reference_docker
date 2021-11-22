@@ -13,7 +13,7 @@ from model import RetinaNetDA
 
 
 class MyMitosisDetection:
-    def __init__(self, path_model, size, batchsize, detect_threshold = 0.62, nms_threshold = 0.4):
+    def __init__(self, path_model, size, batchsize, detect_threshold = 0.64, nms_threshold = 0.4):
 
         # network parameters
         self.detect_thresh = detect_threshold
