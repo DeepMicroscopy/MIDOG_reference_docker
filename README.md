@@ -127,6 +127,7 @@ Finally, you can submit your docker container to MIDOG:
 
 ## General remarks
 - The training is not done as part of the docker container, so please make sure that you only run inference within the container.
-- When initially uploading the reference model, the detection threshold was set to 0.62, which we computed as optimal threshold for the images in our validation set. We later found a bug in our automatic threshold computation and corrected our threshold to 0.64. This value was not optimized on any other images but the validation split of the MIDOG training set.  
+- When initially uploading the reference model, the detection threshold was set to 0.62, which we computed as optimal threshold for the images in our validation set. We later found a bug in our automatic threshold computation and corrected our threshold to 0.64. This value was not optimized on any other images but the validation split of the MIDOG training set.
+- The official manuscipt has a typo in Table 1. On the XR scanner, the reference approach scored an F1-Score of 0.7826 and thereby outperformed the strong baseline on this scanner. The value was corrected in the manuscript version on arXiv.    
 
 
