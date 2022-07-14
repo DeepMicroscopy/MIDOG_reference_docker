@@ -8,7 +8,7 @@ docker volume create mitosisdetection-output
 
 docker run --rm --gpus all \
         --memory=16g \
-        -v $SCRIPTPATH/test/:/input/ \
+        -v $SCRIPTPATH/test/:/input/images/histopathology-roi-cropout/ \
         -v mitosisdetection-output:/output/ \
         mitosisdetection
 
@@ -18,8 +18,8 @@ docker run --rm \
 
 docker run --rm \
         -v mitosisdetection-output:/output/ \
-        -v $SCRIPTPATH/test/:/input/ \
-        python:3.7-slim python -c "import json, sys; f1 = json.load(open('/output/mitotic-figures.json')); f2 = json.load(open('/input/expected_output.json')); sys.exit(f1 != f2);"
+        -v $SCRIPTPATH/test/:/input/images/histopathology-roi-cropout/ \
+        python:3.7-slim python -c "import json, sys; f1 = json.load(open('/output/mitotic-figures.json')); f2 = json.load(open('/input/images/histopathology-roi-cropout/expected_output.json')); sys.exit(f1 != f2);"
 
 if [ $? -eq 0 ]; then
     echo "Tests successfully passed..."

@@ -29,7 +29,7 @@ class Mitosisdetection(DetectionAlgorithm):
                     UniquePathIndicesValidator(),
                 )
             ),
-            input_path = Path("/input/") if execute_in_docker else Path("./test/"),
+            input_path = Path("/input/images/histopathology-roi-cropout/") if execute_in_docker else Path("./test/"),
             output_file = Path("/output/mitotic-figures.json") if execute_in_docker else Path("./output/mitotic-figures.json")
         )
         # TODO: This path should lead to your model weights
