@@ -1,10 +1,14 @@
-# Docker image of reference algorithm for MIDOG 2021 challenge.
+# Docker image of reference algorithm for MIDOG 2022 challenge.
 
 Credits: F. Wilm, K. Breininger, M. Aubreville
 
 This docker image contains a reference implementation of a domain-adversarial training based on RetinaNet, provided by Frauke Wilm (Friedrich-Alexander-Universität Erlangen-Nürnberg, Germany) for the MIDOG challenge.
 
-The container shall serve as an example of how we (and the grand-challenge plattform) expect the outputs to look like. At the same time, it serves as a template for you to implement your own algorithm for submission at MIDOG 2021.
+The container shall serve as an example of how we (and the grand-challenge plattform) expect the outputs to look like. At the same time, it serves as a template for you to implement your own algorithm for submission at MIDOG 2022.
+
+Please note that the MIDOG 2022 docker reference container has changed from the MIDOG 2021 reference container. Main differences are:
+- Retrained algorithm on MIDOG 2022 (TODO)
+- Updated paths in process.py and test.sh/test.bat to comply with grand-challenge.org's new interface for MIDOG 2022.
 
 You will have to provide all files to run your model in a docker container. This example may be of help for this. We also provide a quick explanation of how the container works [here](https://www.youtube.com/watch?v=Zkhrwark3bg).
 
