@@ -101,17 +101,13 @@ Finally, you need to run the `export.sh` (Linux) or `export.bat` script to packa
 
 ## 7. Creating an "Algorithm" on GrandChallenge and submitting your solution to the MIDOG Challenge
 
-** Note: Submission to grand-challenge.org will open on August 15th. **
+** Note: Submission to grand-challenge.org will open on August 5th. **
 
-In order to submit your docker container, you first have to add an **Algorithm** entry for your docker container [here] https://grand-challenge.org/algorithms/create/.
+In order to submit your docker container, you first have to add an **Algorithm** entry for your docker container [here] https://midog2022.grand-challenge.org/evaluation/challenge/algorithms/create/.
 
 Please enter a name for the algorithm:
 
-![algo_title](https://user-images.githubusercontent.com/10051592/128369966-4fe08d95-e158-46c3-9f8e-3a7a320b0fdb.jpg)
-
-And set the following properties
-
-![createalgo2](https://user-images.githubusercontent.com/10051592/128370393-3631bede-586e-4b4e-ad87-2500b11c152e.jpg)
+<img width="1583" alt="image" src="https://user-images.githubusercontent.com/10051592/179455331-0dbb35c7-9243-4650-92be-2adddd9ebdaa.png">
 
 After saving, you can add your docker container (you can also overwrite your container here):
 
