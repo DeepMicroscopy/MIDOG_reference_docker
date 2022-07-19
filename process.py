@@ -16,6 +16,7 @@ import evalutils
 import json
 
 from detection import MyMitosisDetection
+# TODO: Adapt to MIDOG 2022 reference algos
 
 # TODO: We have this parameter to adapt the paths between local execution and execution in docker. You can use this flag to switch between these two modes.
 execute_in_docker = True
@@ -85,9 +86,9 @@ class Mitosisdetection(DetectionAlgorithm):
             # coordinates are transformed to mm - if resolution information is available in the .tiff image. If not,
             # pixel coordinates are returned.
             world_coords = input_image.TransformContinuousIndexToPhysicalPoint(
-                [c for c in reversed(coord)]
+                [c for c in coord]
             )
-            candidates.append(tuple(reversed(world_coords)))
+            candidates.append(tuple(world_coords))
 
         # Note: We expect you to perform thresholding for your predictions. For evaluation, no additional thresholding
         # will be performed
