@@ -45,7 +45,13 @@ class Mitosisdetection(DetectionAlgorithm):
         self.nms_thresh = 0.4
         self.level = 0
         # TODO: You may adapt this to your model/algorithm here.
-        self.md = MyMitosisDetection(path_model, self.size, self.batchsize, detect_threshold=self.detect_thresh, nms_threshold=self.nms_thresh)
+        #####################################################################################
+        # Note: As of MIDOG 2022, the format has changed to enable calculation of the mAP. ##
+        #####################################################################################
+
+        # Use NMS threshold as detection threshold for now so we can forward sub-threshold detections to the calculations of the mAP
+
+        self.md = MyMitosisDetection(path_model, self.size, self.batchsize, detect_threshold=self.nms_thresh, nms_threshold=self.nms_thresh)
         load_success = self.md.load_model()
         if load_success:
             print("Successfully loaded model.")
@@ -88,11 +94,14 @@ class Mitosisdetection(DetectionAlgorithm):
             world_coords = input_image.TransformContinuousIndexToPhysicalPoint(
                 [c for c in coord]
             )
-            candidates.append(tuple(world_coords))
 
-        # Note: We expect you to perform thresholding for your predictions. For evaluation, no additional thresholding
-        # will be performed
-        result = [{"point": [x, y, 0]} for x, y in candidates]
+
+            # Expected syntax from evaluation container is:
+            # x-coordinate(centroid),y-coordinate(centroid),detection, score
+            # where detection should be 1 if score is above threshold and 0 else
+            candidates.append([*tuple(world_coords),float(score>self.detect_thresh), score])
+
+        result = [{"point": c} for c in candidates]
         return result
 
 
