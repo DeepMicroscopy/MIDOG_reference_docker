@@ -1,1 +1,46 @@
-{"type": "Multiple points", "points": [{"point": [0.14647372756903898, 0.1580733550628604, 0]}, {"point": [0.11008273935312868, 0.03707331924495862, 0]}], "version": {"major": 1, "minor": 0}}
+{
+    "type": "Multiple points",
+    "points": [
+        {
+            "point": [
+                0.14647372756903898,
+                0.1580733550628604,
+                0
+            ],
+            "probability": 0.759753406047821,
+            "name": "mitotic figure"
+        },
+        {
+            "point": [
+                0.11008273935312868,
+                0.03707331924495862,
+                0
+            ],
+            "probability": 0.7463231682777405,
+            "name": "mitotic figure"
+        },
+        {
+            "point": [
+                0.03536749167233783,
+                0.15727730219563738,
+                0
+            ],
+            "probability": 0.5490298867225647,
+            "name": "non-mitotic figure"
+        },
+        {
+            "point": [
+                0.1817274974032021,
+                0.20447186503814604,
+                0
+            ],
+            "probability": 0.4250665307044983,
+            "name": "non-mitotic figure"
+        }
+    ],
+    "version": {
+        "major": 1,
+        "minor": 0
+    }
+}
+

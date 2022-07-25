@@ -7,7 +7,7 @@ This docker image contains a reference implementation of a domain-adversarial tr
 The container shall serve as an example of how we (and the grand-challenge plattform) expect the outputs to look like. At the same time, it serves as a template for you to implement your own algorithm for submission at MIDOG 2022.
 
 Please note that the MIDOG 2022 docker reference container has changed from the MIDOG 2021 reference container. Main differences are:
-- Retrained algorithm on MIDOG 2022 (TODO)
+- Changed output format (see 2), enabling calculation of mAP as additional metric.
 - Updated paths in process.py and test.sh/test.bat to comply with grand-challenge.org's new interface for MIDOG 2022.
 
 You will have to provide all files to run your model in a docker container. This example may be of help for this. We also provide a quick explanation of how the container works [here](https://www.youtube.com/watch?v=Zkhrwark3bg).
@@ -57,15 +57,19 @@ The output file is a dictionary (each input file is processed independently), an
             "point": [
                 0.14647372756903898,
                 0.1580733550628604,
-                0
-            ]
+                0,
+            ],
+            "probability" : 0.534,
+            "name" : "mitotic figure",
         },
         {
             "point": [
                 0.11008273935312868,
                 0.03707331924495862,
-                0
+                0,
             ]
+            "probability" : 0.302839283,
+            "name" : "non-mitotic figure",
         }
     ],
     "version": {
@@ -74,6 +78,14 @@ The output file is a dictionary (each input file is processed independently), an
     }
 }
 ```
+
+Note that each point is described by the following dictionary:
+
+<img width="1299" alt="image" src="https://user-images.githubusercontent.com/10051592/180752496-d0474897-105b-48c4-aa45-dc737582b9c2.png">
+
+The field "name" is used to distinguish between above threshold detections and below threshold detections. Please make sure that you find a suitable detection threshold. The below threshold detections are part of the output to calculate the average precision metric.
+
+**Caution**: This has changed from the MIDOG 2021 docker container and also from earlier versions of this container. If you provide the old format, the evaluation will still work, but will not give you sensible values for the AP metric.
 
 ## 3. Embedding your algorithm into an algorithm docker container <a name="todocker"></a>
 
@@ -127,7 +139,7 @@ Finally, you can submit your docker container to MIDOG:
 
 ## General remarks
 - The training is not done as part of the docker container, so please make sure that you only run inference within the container.
-- When initially uploading the reference model, the detection threshold was set to 0.62, which we computed as optimal threshold for the images in our validation set. We later found a bug in our automatic threshold computation and corrected our threshold to 0.64. This value was not optimized on any other images but the validation split of the MIDOG training set.
+- This image was trained on MIDOG 2021, which had only human breast cancer scanned with various scanners. Do not expect it to have a superb performance on the test sets.
 - The official manuscipt has a typo in Table 1. On the XR scanner, the reference approach scored an F1-Score of 0.7826 and thereby outperformed the strong baseline on this scanner. The value was corrected in the manuscript version on arXiv.    
 
 
