@@ -57,14 +57,16 @@ The output file is a dictionary (each input file is processed independently), an
             "point": [
                 0.14647372756903898,
                 0.1580733550628604,
-                0
+                1,
+                0.5749304823938742
             ]
         },
         {
             "point": [
                 0.11008273935312868,
                 0.03707331924495862,
-                0
+                0,
+                0.34837492834982349
             ]
         }
     ],
@@ -74,6 +76,12 @@ The output file is a dictionary (each input file is processed independently), an
     }
 }
 ```
+
+Note that each point is described by the following tuple:
+
+<img width="1235" alt="image" src="https://user-images.githubusercontent.com/10051592/180738243-57bfbdea-7c2a-4873-a2ae-6529d1c26192.png">
+
+**Caution**: This has changed from the MIDOG 2021 docker container and also from earlier versions of this container. If you provide the old format, the evaluation will still work, but will not give you sensible metrics for mAP.
 
 ## 3. Embedding your algorithm into an algorithm docker container <a name="todocker"></a>
 
