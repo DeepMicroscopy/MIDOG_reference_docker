@@ -100,11 +100,11 @@ class Mitosisdetection(DetectionAlgorithm):
 
 
             # Expected syntax from evaluation container is:
-            # x-coordinate(centroid),y-coordinate(centroid),detection, score
+            # x-coordinate(centroid),y-coordinate(centroid),0, detection, score
             # where detection should be 1 if score is above threshold and 0 else
-            candidates.append([*tuple(world_coords),int(score>self.detect_thresh), score])
+            candidates.append([*tuple(world_coords),0,int(score>self.detect_thresh), score])
 
-        result = [{"point": c[0:2], "probability": c[3], "name": classnames[c[2]] } for c in candidates]
+        result = [{"point": c[0:3], "probability": c[4], "name": classnames[c[3]] } for c in candidates]
         return result
 
 
