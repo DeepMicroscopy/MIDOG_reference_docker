@@ -57,17 +57,19 @@ The output file is a dictionary (each input file is processed independently), an
             "point": [
                 0.14647372756903898,
                 0.1580733550628604,
-                1,
-                0.5749304823938742
-            ]
+                0,
+            ],
+            "probability" : 0.534,
+            "name" : "mitotic figure",
         },
         {
             "point": [
                 0.11008273935312868,
                 0.03707331924495862,
                 0,
-                0.34837492834982349
             ]
+            "probability" : 0.302839283,
+            "name" : "non-mitotic figure",
         }
     ],
     "version": {
@@ -77,9 +79,9 @@ The output file is a dictionary (each input file is processed independently), an
 }
 ```
 
-Note that each point is described by the following tuple:
+Note that each point is described by the following dictionary:
 
-<img width="1235" alt="image" src="https://user-images.githubusercontent.com/10051592/180738243-57bfbdea-7c2a-4873-a2ae-6529d1c26192.png">
+<img width="1299" alt="image" src="https://user-images.githubusercontent.com/10051592/180752496-d0474897-105b-48c4-aa45-dc737582b9c2.png">
 
 **Caution**: This has changed from the MIDOG 2021 docker container and also from earlier versions of this container. If you provide the old format, the evaluation will still work, but will not give you sensible metrics for mAP.
 
