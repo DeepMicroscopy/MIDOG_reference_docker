@@ -83,6 +83,9 @@ class Mitosisdetection(DetectionAlgorithm):
             result_boxes = nms(result_boxes, self.nms_thresh)
 
         candidates = list()
+
+        classnames = ['non-mitotic figure', 'mitotic figure']
+
         for i, detection in enumerate(result_boxes):
             # our prediction returns x_1, y_1, x_2, y_2, prediction, score -> transform to center coordinates
             x_1, y_1, x_2, y_2, prediction, score = detection
@@ -99,9 +102,9 @@ class Mitosisdetection(DetectionAlgorithm):
             # Expected syntax from evaluation container is:
             # x-coordinate(centroid),y-coordinate(centroid),detection, score
             # where detection should be 1 if score is above threshold and 0 else
-            candidates.append([*tuple(world_coords),float(score>self.detect_thresh), score])
+            candidates.append([*tuple(world_coords),int(score>self.detect_thresh), score])
 
-        result = [{"point": c} for c in candidates]
+        result = [{"point": c[0:2], "probability": c[3], "name": classnames[c[2]] } for c in candidates]
         return result
 
 
