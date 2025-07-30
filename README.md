@@ -1,5 +1,9 @@
 # Docker image of reference algorithm for MIDOG 2022 challenge.
 
+**Note**: The MIDOG25 docker containers can be found here:
+- [MIDOG 2025 Track 1](https://github.com/DeepMicroscopy/MIDOG25_T1_reference_docker)
+- [MIDOG 2025 Track 2](https://github.com/DeepMicroscopy/MIDOG25_T2_reference_docker)
+
 Credits: F. Wilm, K. Breininger, M. Aubreville
 
 This docker image contains a reference implementation of a domain-adversarial training based on RetinaNet, provided by Frauke Wilm (Friedrich-Alexander-Universität Erlangen-Nürnberg, Germany) for the MIDOG challenge.
